@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruleta Aleatoria</title>
+  <style>
+    body {
+      background: #f9f4f4;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      min-height: 100vh;
+    }
+    h1 {
+      margin-top: 30px;
+      font-size: 3rem;
+      color: #222;
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-top: 20px;
+    }
+    .ruleta-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #ruletaCanvas {
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .resultado {
+      margin-top: 30px;
+      font-size: 2rem;
+      color: #1976d2;
+      min-height: 2.5rem;
+      text-align: center;
+    }
+    .controles {
+      margin-left: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 220px;
+    }
+    .controles textarea {
+      width: 220px;
+      height: 250px;
+      font-size: 1rem;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #bbb;
+      resize: vertical;
+    }
+    .controles button {
+      padding: 10px 0;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #1976d2;
+      color: #fff;
+      transition: background 0.2s;
+    }
+    .controles button:hover {
+      background: #125ea7;
+    }
+    .controles .secundario {
+      background: #e57373;
+    }
+    .controles .secundario:hover {
+      background: #b71c1c;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ruleta Aleatoria</h1>
+  <div class="container">
+    <div class="ruleta-area">
+      <canvas id="ruletaCanvas" width="400" height="400"></canvas>
+      <div class="resultado" id="resultado"></div>
+      <div id="tablaSalidos" style="margin-top: 20px; width: 320px;"></div>
+    </div>
+    <div class="controles">
+      <textarea id="gruposInput"></textarea>
+      <button id="btnIniciar" onclick="girarRuleta()">Iniciar</button>
+      <button id="btnReiniciar" class="secundario" onclick="reiniciarRuleta()">Reiniciar</button>
+    </div>
+  </div>
+  <script src="ruleta.js"></script>
+</body>
+</html> 
