@@ -22,7 +22,7 @@ function getGruposNoSalidos() {
   const texto = document.getElementById('gruposInput').value;
   const gruposBase = texto.split('\n').map(x => x.trim()).filter(x => x.length > 0);
   let gruposNoSalidos = gruposBase.filter(g => !salidos.includes(g));
-  if (salidos.length >= 3) {
+  if (salidos.length >= 1) {
     const excluidos = [
       'Grupo 6',
       'Sebastian Sanchez',
